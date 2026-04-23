@@ -3,11 +3,19 @@
 [alias]
 	s = status
 	co = checkout
+	cb = checkout -b
 	ds = diff --staged
 	d = diff
-	c = log --oneline --all --graph
-	ca = log --oneline --all --graph --stat
+	c = commit
+	cn = commit --no-verify
+	wip = commit -m "wip" --no-verify
+	r = rebase
+	ro = rebase --onto=origin/main
+	l = log --oneline --all --graph
+	la = log --oneline --all --graph --stat
+	ll = log --oneline --graph
 	f = fetch
+	pop = reset HEAD~
 [init]
 	defaultBranch = main
 [fetch]
@@ -25,3 +33,7 @@
 	fsckobjects = true
 [core]
 	autocrlf = false
+	editor = nvim
+[push]
+	autoSetupRemote = true
+	default = simple
